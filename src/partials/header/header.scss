@@ -1,0 +1,10 @@
+@import '../../assets/styles/fonts';
+
+.header {
+  background-image: url('../../assets/images/header-background.png');
+  background-size: cover;
+
+  .title {
+    @include font-title;
+  }
+}

@@ -1,0 +1,63 @@
+@mixin font-title {
+  font-family: 'KG Summer Sunshine', 'Arial Black', sans-serif;
+}
+
+@mixin font-title-blackout {
+  font-family: 'KG Summer Sunshine Blackout', 'Arial Black', sans-serif;
+}
+
+@mixin font-title-shadow {
+  font-family: 'KG Summer Sunshine Shadow', 'Arial Black', sans-serif;
+}
+
+@mixin font-body {
+  font-family: Neucha, cursive;
+}
+
+.font-title {
+  @include font-title;
+}
+
+.font-title-blackout {
+  @include font-title-blackout;
+}
+
+.font-title-shadow {
+  @include font-title-shadow;
+}
+
+.font-body {
+  @include font-body;
+}
+
+@font-face {
+  font-family: 'KG Summer Sunshine';
+  src: url('../fonts/kg-summer-sunshine/KGSummerSunshine.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'KG Summer Sunshine Blackout';
+  src: url('../fonts/kg-summer-sunshine/KGSummerSunshineBlackout.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'KG Summer Sunshine Shadow';
+  src: url('../fonts/kg-summer-sunshine/KGSummerSunshineShadow.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: Neucha;
+  src: url('../fonts/neucha/Neucha-Regular.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}
