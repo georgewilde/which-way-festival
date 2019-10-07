@@ -1,20 +1,36 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "which-way-festival",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Which Way Festival - Family Friendly Charity Music Festival in the beautiful Staffordshire countryside",
   "version": "0.1.0",
-  "license": "MIT",
+  "author": "George Wilde",
+  "license": "ISC",
+  "homepage": "https://www.whichwayfestival.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/georgewilde/which-way-festival"
+  },
+  "bugs": {
+    "url": "https://github.com/georgewilde/which-way-festival/issues"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "lint:styles": "stylelint \"./src/**/*.module.css\"",
+    "lint:ts": "eslint \"./src\" --ext .js,.ts,.tsx --quiet",
+    "lint": "yarn lint:ts && yarn lint:styles",
+    "typeCheck": "tsc --noEmit"
   },
+  "browserslist": [
+    "last 3 versions"
+  ],
   "dependencies": {
     "gatsby": "^2.15.28",
     "gatsby-plugin-netlify-cms": "^4.1.21",
+    "gatsby-plugin-postcss": "^2.1.10",
+    "gatsby-plugin-typescript": "^2.1.11",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-transformer-remark": "^2.6.26",
     "netlify-cms-app": "^2.9.7",
@@ -22,13 +38,35 @@
     "react-dom": "^16.10.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.11",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "husky": "^3.0.8",
+    "prettier": "^1.18.2",
+    "stylelint": "^11.0.0",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-prettier": "^1.1.1",
+    "typescript": "^3.6.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
   }
 }
